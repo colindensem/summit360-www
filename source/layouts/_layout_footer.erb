@@ -1,6 +1,6 @@
 
 
-<div class="footer">
+<footer>
     <div class="overlayer">
     <div class="container">
         <div class="row support">
@@ -9,7 +9,7 @@
                 <ul class="list-unstyled">
 
                     <li><a href="/about/">About Us</a></li>
-                    <li><a href="/contact-us/">Contact Us</a></li>
+                    <li><a href="/contact/">Contact Us</a></li>
 
                 </ul>
             </div>
@@ -17,21 +17,21 @@
                 <h4>Clients</h4>
                 <ul class="list-unstyled">
 
-                  <% data.clients.list.each do |f| %>
+                  <% data.clients.list[0..4].each do |f| %>
                     <li><%= f %></li>
                  <% end %>
                 </ul>
 
             </div>
             <div class="col-sm-4">
-                <h4>Recent Entries</h4>
+                <!-- <h4>Recent Entries</h4>
                 <ul class="list-unstyled">
                 <% blog.articles[0...5].each do |article| %>
                   <li>
                     <a href="<%= article.url %>"><%= article.title %></a>
                   </li>
                 <% end %>
-              </ul>
+                </ul> -->
             </div>
             <div class="col-sm-2">
                 <h4>More Links</h4>
@@ -46,12 +46,9 @@
         </div>
         <div class="row">
             <div class="credits">
-                &copy; 2015-16 Youth Therapy Services, made with <i class="fa fa-heart heart" alt="love"></i> by Summit360.
+                &copy; 2016 Summit 360 Ltd., registered in England and Wales. Company Reg:
             </div>
         </div>
     </div>
     </div>
-</div>
-
-<%= javascript_include_tag  "all" %>
-<%= google_analytics_universal_tag %>
+</footer>

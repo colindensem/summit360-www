@@ -5,5 +5,10 @@
 
 	<%= yield %>
 	<%= partial "layouts/layout_footer" %>
+
+	<%= javascript_include_tag  "all" %>
+	<script src="//maps.google.com/maps/api/js"></script>
+	<%= google_analytics_universal_tag %>
+
 </body>
 </html>

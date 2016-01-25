@@ -17,8 +17,8 @@ gem "nokogiri"
 # Middleman Sitemap Builder
 gem 'middleman-search_engine_sitemap'
 
-# Middleman Breadcrumbs
-gem 'middleman-breadcrumbs'
+# # Middleman Breadcrumbs
+# gem 'middleman-breadcrumbs'
 
 # Middleman metatags
 gem 'middleman-meta-tags'
@@ -27,6 +27,8 @@ gem 'middleman-meta-tags'
 gem "middleman-google-analytics"
 
 gem "bootstrap-sass", :require => false
+
+gem 'jquery-middleman'
 
 # Automatically add vendor prefixes to CSS rules in stylesheets served by Middleman
 gem "middleman-autoprefixer"

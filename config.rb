@@ -1,3 +1,4 @@
+require_relative "./lib/build_cleaner"
 
 
 set :site_url, "http://www.summit360.co.uk"
@@ -83,6 +84,11 @@ end
 
 # Build-specific configuration
 configure :build do
+
+  #See lib/build_cleaner.rb
+  activate :build_cleaner
+
+
   # For example, change the Compass output style for deployment
   activate :minify_css
 

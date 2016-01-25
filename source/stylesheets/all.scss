@@ -1,5 +1,155 @@
-@import "bootstrap";
+@charset "utf-8";
 
+@import "app-variables";
+
+@import "bootstrap";
+@import "material/bootstrap-material-design";
+
+@import "featured_icons";
+
+/* general styles */
+html {
+  height: 100%;
+  width: 100%;
+}
+.index {
+  height: 100%;
+  width: 100%;
+}
+.contact_index {
+
+}
+
+/* padded section */
+.pad-section {
+  padding: 50px 0;
+}
+.pad-section-100 {
+  padding-top: 100px;
+}
+.pad-section img {
+  // width: 100%;
+}
+
+.text-top-100 {
+  display: table-cell;
+  text-align: center;
+  padding-top: 100px;
+}
+/* vertical-centered text */
+.text-vcenter {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.img-responsive2 {
+    display: inline-block !important;
+    max-width: 20%;
+    height: auto;
+}
+
+.white-text {
+  color: #fff;
+}
+.orange-text {
+    color: #ff9800!important;
+}
+
+.btn-standout {
+  background-color: #000000;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+/* additional sections */
+#contact {
+  margin-top:60px;
+}
+
+
+#home {
+  background: url(/images/bg-01.jpg) no-repeat center center fixed;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+#home h1 {
+  font-size: 4.5em;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+#about {
+}
+
+#services {
+  background-color: #306d9f;
+  color: #ffffff;
+}
+#services .glyphicon {
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 60px;
+  height: 140px;
+  line-height: 140px;
+  text-align: center;
+  vertical-align: middle;
+  width: 140px;
+}
+
+#information {
+  background: url(/images/bg-02.jpg) no-repeat center center fixed;
+  display: table;
+  height: 800px;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#information .panel {
+  opacity: 0.85;
+}
+
+#google_map {
+  height: 500px;
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+}
+footer .glyphicon {
+  color: #333333;
+  font-size: 60px;
+}
+footer .glyphicon:hover {
+  color: #306d9f;
+}
+
+.credits {
+  text-align: center;
+  size: 0.8em;
+}
+
+
+//Tagline Effects
 .tagline {
   background-color: #eee;
 }
@@ -25,59 +175,25 @@
     font-weight: 400;
 }
 
+
+// .background {
+//    -webkit-background-size: 100%;
+//   -moz-background-size: 100%;
+//   -o-background-size: 100%;
+//   background-size: 100%;
 //
-// @charset "utf-8";
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//   width: 100%;
+//   background-attachment: relative;
+//   background-position: top center;
+// }
+// .background-lakes {
+//   background-image: url('/images/bg-02.jpg');
+// }
 //
-// body {
-//   background: #d4d4d4 url("../images/background.png");
-//   text-align: center;
-//   font-family: sans-serif; }
-//
-// h1 {
-//   color: rgba(0, 0, 0, .3);
-//   font-weight: bold;
-//   font-size: 32px;
-//   letter-spacing: -1px;
-//   text-transform: uppercase;
-//   text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
-//   background: url("../images/middleman.png") no-repeat center 100px;
-//   padding: 350px 0 10px;
-//   margin: 0; }
-//
-// .doc {
-//   font-size: 14px;
-//   margin: 0; }
-//   .doc:before,
-//   .doc:after {
-//     opacity: .2;
-//     padding: 6px;
-//     font-style: normal;
-//     position: relative;
-//     content: "•"; }
-//   .doc a {
-//     color: rgba(0, 0, 0, 0.3); }
-//     .doc a:hover {
-//       color: #666; }
-//
-// .welcome {
-//   -webkit-animation-name: welcome;
-//   -webkit-animation-duration: .9s; }
-//
-// @-webkit-keyframes welcome {
-//   from {
-//     -webkit-transform: scale(0);
-//     opacity: 0;
-//   }
-//   50% {
-//    -webkit-transform: scale(0);
-//    opacity: 0;
-//   }
-//   82.5% {
-//     -webkit-transform: scale(1.03);
-//     -webkit-animation-timing-function: ease-out;
-//     opacity: 1;
-//   }
-//   to {
-//     -webkit-transform: scale(1);
-//   }
+// .background-alps {
+//   background-image: url('/images/bg-01.jpg');
 // }

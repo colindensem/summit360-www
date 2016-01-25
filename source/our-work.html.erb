@@ -1,0 +1,40 @@
+---
+title: Our work
+---
+
+<section class="pad-section-100">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Our Work</h2>
+        <p class="lead">A range of internal &amp; external client work. All implemented using a range of technology solutions.</p>
+      </div>
+    </div>
+
+    <div class="row">
+
+
+
+      <% data.clients.list.each do |entry| %>
+        <div class="col-xs-6 col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <%= entry %>
+              </div>
+            <div class="panel-body">
+
+
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+
+
+    </div>
+  </div>
+
+
+
+
+</section>
