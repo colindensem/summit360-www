@@ -2,13 +2,14 @@
 # the following line to use "http://" instead
 source 'https://rubygems.org'
 
-gem "middleman", "~>3.4.1"
+gem "middleman", ">=4.0.0"
+gem "middleman-sprockets", '~> 4.0.0'
 
 # Live-reloading plugin
-gem "middleman-livereload", "~> 3.3.0"
+gem "middleman-livereload"
 
 # Middleman Deploy for quickly deploying build to Github etc
-gem 'middleman-deploy', '~> 1.0'
+gem 'middleman-deploy', "~> 2.0.0.pre.alpha"
 
 # Blog extension for Middleman
 gem "middleman-blog"
@@ -25,8 +26,6 @@ gem 'middleman-meta-tags'
 
 # Middleman Google Analytics
 gem "middleman-google-analytics"
-
-gem "bootstrap-sass", :require => false
 
 gem 'jquery-middleman'
 

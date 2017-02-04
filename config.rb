@@ -1,7 +1,5 @@
-require_relative "./lib/build_cleaner"
+#require_relative "./lib/build_cleaner"
 
-
-set :site_url, "http://www.summit360.co.uk"
 set :site_description, "Ruby & Elixir development in Sheffield"
 
 # For custom domains on github pages
@@ -14,18 +12,16 @@ page "/articles/*", :layout => "article"
 page "/articles/", layout: "page"
 page "/", layout: 'layout'
 
-set :url_root, site_url
+set :url_root, "https://summit360.co.uk" 
 
 activate :search_engine_sitemap
-
-activate :breadcrumbs
 
 activate :meta_tags
 
 activate :google_analytics do |ga|
   ga.tracking_id = 'UA-12318827-2' # Replace with your property ID.
   # Tracking in development environment (default = true)
-  ga.development = false
+  #ga.development = false
 end
 
 ###
@@ -34,7 +30,7 @@ end
 require "lib/custom_helpers"
 helpers CustomHelpers
 
-require 'bootstrap-sass'
+#require 'bootstrap-sass'
 
 # Automatic image dimensions on image_tag helper
 activate :automatic_image_sizes
@@ -69,26 +65,26 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
 #
+## Middleman v4 Sprockets
+#
+
+activate :sprockets
+sprockets.append_path 'bower_components/bootstrap-sass/assets/fonts'
+sprockets.append_path 'bower_components'
+#
 ## DEPLOY
 #
 activate :deploy do |deploy|
-  deploy.build_before = true # default: false
 
-  deploy.method = :git
-  # Optional Settings
-  deploy.remote   = 'github' # remote name or git url, default: origin
-  deploy.branch   = 'master' # default: gh-pages
-  # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
-  # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
+  deploy.deploy_method = :git
+  deploy.remote = 'github'
+  deploy.branch = 'master'
+  deploy.build_before = true
+
 end
 
 # Build-specific configuration
 configure :build do
-
-  #See lib/build_cleaner.rb
-  activate :build_cleaner
-
-
   # For example, change the Compass output style for deployment
   activate :minify_css
 
