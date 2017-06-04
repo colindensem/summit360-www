@@ -6,13 +6,13 @@ cache:
     - node_modules/
 
 before_script:
-  - apt-get update -yqqq
-  - bundle install --path vendor
-  - yarn install
 
 build:
   stage: build
   script:
+    - apt-get update -yqqq
+    - bundle install --path vendor
+    - yarn install
     - bundle exec middleman build
   artifacts:
     paths:
@@ -39,9 +39,10 @@ production:
   script:
     - apt-get install -y lftp
     - source ftp_deploy_vars
+    - env
     - lftp -c 'set ftp:ssl-force on ; set ftp:ssl-allow true ; set ftp:ssl-protect-data on ; set ssl:verify-certificate no; open -u $FTP_USER,$FTP_PASSWORD -e "mirror -eRv public/  public/; quit" $FTP_HOST'
   artifacts:
     paths:
-    - public
+      - public
   only:
     - master
