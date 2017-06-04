@@ -1,6 +1,5 @@
 
-
-// $(document).ready(function(){
+$(document).ready(function(){
 
 //     // create a LatLng object containing the coordinate for the center of the map
 //     var latlng = new google.maps.LatLng(53.3787024,-1.4702756);
@@ -36,4 +35,4 @@
 
 
 
-// });
+});
