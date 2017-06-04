@@ -2,31 +2,46 @@ image: derbenni/gitlab-ruby-yarn-imagemagick:latest
 
 cache:
   paths:
-    - vendor
+    - vendor/
     - node_modules/
 
-# test:
-#   script:
-#   - apt-get update -yqqq
-#   - apt-get install -y nodejs
-#   - bundle install --path vendor
-#   - bundle exec middleman build
-#   # except:
-#   #   - master
 before_script:
   - apt-get update -yqqq
-  - apt-get install -y lftp
   - bundle install --path vendor
   - yarn install
+
+build:
+  stage: build
+  script:
+    - bundle exec middleman build
+  artifacts:
+    paths:
+      - public  
+
+vars:
+  type: test
+  script:
+    - 'export FTP_USER="$(echo "$FTP_USER")" >> ftp_deploy_vars'
+    - 'export FTP_PASSWORD="$(echo "$FTP_PASSWORD")" > ftp_deploy_vars'
+    - 'export FTP_HOST="$(echo "$FTP_HOST")" > ftp_deploy_vars'
+    
+  artifacts:
+    paths:
+      - ftp_deploy_vars
+  only:
+    - master
+
+
 
 production:
   type: deploy
   
   script:
-    - bundle exec middleman build
+    - apt-get install -y lftp
+    - source ftp_deploy_vars
     - lftp -c 'set ftp:ssl-force on ; set ftp:ssl-allow true ; set ftp:ssl-protect-data on ; set ssl:verify-certificate no; open -u $FTP_USER,$FTP_PASSWORD -e "mirror -eRv public/  public/; quit" $FTP_HOST'
   artifacts:
     paths:
     - public
   only:
-  - master
+    - master
