@@ -8,27 +8,17 @@ cache:
 before_script:
 
 build:
-  stage: build
+  stage: deploy
   script:
     - bundle install --path vendor
     - yarn install
     - bundle exec middleman build
-  artifacts:
-    paths:
-      - public  
-
-
-deploy_to_ftp:
-  stage: deploy
   
-  script:
     - apt-get update -yqqq
     - apt-get install -y lftp
     - mkdir -p ~/.lftp
     - echo 'set ssl:verify-certificate no' >> ~/.lftp/rc
     - lftp -c 'set ftp:ssl-force on ; set ftp:ssl-allow true ; set ftp:ssl-protect-data on ; set ssl:verify-certificate no; open -u '$FTP_USER','$FTP_PASSWORD' -e "mirror -c -eRv ./public  ./public; quit" '$FTP_HOST
-  artifacts:
-    paths:
-      - public
+  
   only:
     - master
