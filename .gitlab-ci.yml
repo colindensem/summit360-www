@@ -24,7 +24,7 @@ production:
   
   script:
     - bundle exec middleman build
-    - lftp -e "mirror -eRv $CI_PROJECT_DIR builds/$CI_BUILD_REF_NAME; quit;" sftp://$CREDENTIALS
+    - lftp -c 'set ftp:ssl-force on ; set ftp:ssl-allow true ; set ftp:ssl-protect-data on ; set ssl:verify-certificate no; open -u $FTP_USER,$FTP_PASSWORD -e "mirror -eRv $CI_PROJECT_DIR public/; quit" $FTP_HOST'
   artifacts:
     paths:
     - public
