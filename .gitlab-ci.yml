@@ -1,4 +1,4 @@
-image: ruby:2.3
+image: derbenni/gitlab-ruby-yarn-imagemagick:latest
 
 cache:
   paths:
@@ -14,10 +14,6 @@ cache:
 #   # except:
 #   #   - master
 before_script:
-  - apt-get update -yqqq
-  - curl -sL https://deb.nodesource.com/setup_7.x | bash 
-  - apt-get install -y nodejs
-  - curl -o- -L https://yarnpkg.com/install.sh | bash
   - bundle install --path vendor
   - yarn install
 
