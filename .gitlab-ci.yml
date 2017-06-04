@@ -15,8 +15,8 @@ cache:
 #   #   - master
 before_script:
   - apt-get update -yqqq
-  - apt-get install -y nodejs 
-  - node -v
+  - curl -sL https://deb.nodesource.com/setup_7.x | bash 
+  - apt-get install -y nodejs
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - bundle install --path vendor
   - yarn install
