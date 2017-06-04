@@ -13,16 +13,18 @@ cache:
 #   - bundle exec middleman build
 #   # except:
 #   #   - master
+before_script:
+  - apt-get update -yqqq
+  - apt-get install -y nodejs 
+  - node -v
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - bundle install --path vendor
+  - yarn install
 
 production:
   type: deploy
-  before_script:
-  - apt-get update -yqqq
-  - apt-get install -y nodejs 
-  - curl -o- -L https://yarnpkg.com/install.sh | bash
-  - bundle install --path vendor
+  
   script:
-    - yarn install
     - bundle exec middleman build
     - lftp -e "mirror -eRv $CI_PROJECT_DIR builds/$CI_BUILD_REF_NAME; quit;" sftp://$CREDENTIALS
   artifacts:
