@@ -1,11 +1,22 @@
 #require_relative "./lib/build_cleaner"
 
-set :site_description, "Ruby & Elixir development in Sheffield"
+set :site_description, "Ruby & Elixir Development  : Sheffield UK"
 
 # For custom domains on github pages
 page "CNAME", layout: false
 
 page "/sitemap.xml", layout: false
+
+page "/50x.html", directory_index: false
+page "/403.html", directory_index: false
+page "/404.html", directory_index: false
+page "/500.html", directory_index: false
+page "/502.html", directory_index: false
+page "/503.html", directory_index: false
+page "/504.html", directory_index: false
+page "/503.jpg", directory_index: false
+page "/maintenance.html", directory_index: false
+
 
 # page "/*", layout: 'page'
 page "/articles/*", :layout => "article"
