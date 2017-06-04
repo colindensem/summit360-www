@@ -10,7 +10,6 @@ before_script:
 build:
   stage: build
   script:
-    - apt-get update -yqqq
     - bundle install --path vendor
     - yarn install
     - bundle exec middleman build
@@ -23,6 +22,7 @@ deploy_to_ftp:
   stage: deploy
   
   script:
+    - apt-get update -yqqq
     - apt-get install -y lftp
     - lftp -c 'set ftp:ssl-force on ; set ftp:ssl-allow true ; set ftp:ssl-protect-data on ; set ssl:verify-certificate no; open -u '$FTP_USER','$FTP_PASSWORD' -e "mirror -eRv public/  public/; quit" '$FTP_HOST
   artifacts:
