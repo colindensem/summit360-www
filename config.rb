@@ -85,6 +85,11 @@ end
 
 # Build-specific configuration
 configure :build do
+
+  set :build_dir, 'public'
+  #set :base_url, "/middleman" # baseurl for GitLab Pages (project name) - leave empty if you're building a user/group website
+  activate :relative_assets
+
   # For example, change the Compass output style for deployment
   activate :minify_css
 
