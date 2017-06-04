@@ -13,12 +13,17 @@ test:
   except:
     - master
 
-pages:
-  script:
+production:
+  type: deploy
+  before_script:
   - apt-get update -yqqq
-  - apt-get install -y nodejs
+  - apt-get install -y nodejs 
+  - npm install bower
+  - bower install
   - bundle install --path vendor
   - bundle exec middleman build
+  script:
+    - lftp -e "mirror -eRv $CI_PROJECT_DIR builds/$CI_BUILD_REF_NAME; quit;" sftp://$CREDENTIALS
   artifacts:
     paths:
     - public
