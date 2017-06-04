@@ -14,7 +14,8 @@ cache:
 #   # except:
 #   #   - master
 before_script:
-  - apt-get install -yqqq lftp
+  - apt-get update -yqqq
+  - apt-get install -y lftp
   - bundle install --path vendor
   - yarn install
 
