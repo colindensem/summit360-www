@@ -24,6 +24,8 @@ deploy_to_ftp:
   script:
     - apt-get update -yqqq
     - apt-get install -y lftp
+    - mkdir -p ~/.lftp
+    - echo 'set ssl:verify-certificate no' >> ~/.lftp/rc
     - lftp -c 'set ftp:ssl-force on ; set ftp:ssl-allow true ; set ftp:ssl-protect-data on ; set ssl:verify-certificate no; open -u '$FTP_USER','$FTP_PASSWORD' -e "mirror -eRv public  public; quit" '$FTP_HOST
   artifacts:
     paths:
