@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/e2/rb-inotify.git
+  revision: be4cf88b4dab0bb3a899b16a0df8a6fcf1502e16
+  branch: misc_bugfixes
+  specs:
+    rb-inotify (0.9.7)
+      ffi (>= 0.5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -30,7 +38,7 @@ GEM
     fast_blank (1.0.0)
     fastimage (2.0.1)
       addressable (~> 2)
-    ffi (1.9.17)
+    ffi (1.9.18)
     haml (4.0.7)
       tilt
     hamster (3.0.0)
@@ -130,8 +138,6 @@ GEM
     rack-livereload (0.3.16)
       rack
     rb-fsevent (0.9.8)
-    rb-inotify (0.9.8)
-      ffi (>= 0.5.0)
     sass (3.4.23)
     servolux (0.12.0)
     sprockets (3.7.1)
@@ -161,8 +167,9 @@ DEPENDENCIES
   middleman-search_engine_sitemap
   middleman-sprockets (~> 4.0.0)
   nokogiri
+  rb-inotify!
   tzinfo-data
   wdm (~> 0.1.0)
 
 BUNDLED WITH
-   1.14.3
+   1.15.1

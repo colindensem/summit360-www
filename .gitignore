@@ -20,4 +20,4 @@
 # Ignore gems installed in local directory
 /vendor/bundle/
 
-bower_components/
+node_modules/

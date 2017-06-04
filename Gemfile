@@ -40,3 +40,4 @@ gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
 
 # Windows does not come with time zone data
 gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
+gem 'rb-inotify', github: 'e2/rb-inotify', branch: 'misc_bugfixes'

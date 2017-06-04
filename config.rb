@@ -69,8 +69,9 @@ set :images_dir, 'images'
 #
 
 activate :sprockets
-sprockets.append_path 'bower_components/bootstrap-sass/assets/fonts'
-sprockets.append_path 'bower_components'
+sprockets.append_path 'node_modules/bootstrap-sass/assets/fonts'
+sprockets.append_path 'node_modules/bootstrap-sass/assets/javascripts'
+sprockets.append_path 'node_modules'
 #
 ## DEPLOY
 #

@@ -1,0 +1,21 @@
+{
+  "name": "summit360.www",
+  "version": "1.0.0",
+  "description": "Simple middleman asset support",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+ssh://git@gitlab.com/summit360/summit360-www.git",
+  "author": "Colin Densem <colin@summit360.co.uk>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/summit360/summit360-www/issues"
+  },
+  "homepage": "https://gitlab.com/summit360/summit360-www#README"
+}

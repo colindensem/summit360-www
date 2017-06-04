@@ -2,24 +2,25 @@ image: ruby:2.3
 
 cache:
   paths:
-  - vendor
+    - vendor
+    - node_modules/
 
-test:
-  script:
-  - apt-get update -yqqq
-  - apt-get install -y nodejs
-  - bundle install --path vendor
-  - bundle exec middleman build
-  except:
-    - master
+# test:
+#   script:
+#   - apt-get update -yqqq
+#   - apt-get install -y nodejs
+#   - bundle install --path vendor
+#   - bundle exec middleman build
+#   # except:
+#   #   - master
 
 production:
   type: deploy
   before_script:
   - apt-get update -yqqq
   - apt-get install -y nodejs 
-  - npm install bower
-  - bower install
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - yarn install
   - bundle install --path vendor
   - bundle exec middleman build
   script:
