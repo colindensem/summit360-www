@@ -20,10 +20,10 @@ production:
   - apt-get update -yqqq
   - apt-get install -y nodejs 
   - curl -o- -L https://yarnpkg.com/install.sh | bash
-  - yarn install
   - bundle install --path vendor
-  - bundle exec middleman build
   script:
+    - yarn install
+    - bundle exec middleman build
     - lftp -e "mirror -eRv $CI_PROJECT_DIR builds/$CI_BUILD_REF_NAME; quit;" sftp://$CREDENTIALS
   artifacts:
     paths:
