@@ -1,24 +1,25 @@
 image: derbenni/gitlab-ruby-yarn-imagemagick:latest
 
 cache:
+  key: "$CI_BUILD_REF_NAME"
   paths:
     - vendor/
     - node_modules/
 
-before_script:
 
 build:
   stage: deploy
-  script:
-    - bundle install --path vendor
-    - yarn install
-    - bundle exec middleman build
-  
+  before_script:
     - apt-get update -yqqq
     - apt-get install -y lftp
     - mkdir -p ~/.lftp
     - echo 'set ssl:verify-certificate no' >> ~/.lftp/rc
-    - lftp -c 'set ftp:ssl-force on ; set ftp:ssl-allow true ; set ftp:ssl-protect-data on ; set ssl:verify-certificate no; open -u '$FTP_USER','$FTP_PASSWORD' -e "mirror -c -eRv ./public  ./public; quit" '$FTP_HOST
+    - bundle install --path vendor
+    - yarn install
+  script:
+    - bundle exec middleman build
+  
+    - lftp -c 'set ftp:ssl-force on ; set ftp:ssl-allow true ; set ftp:ssl-protect-data on ; set ssl:verify-certificate no; open -u '$FTP_USER','$FTP_PASSWORD' -e "mirror -c -e --reverse -v ./  ./public; quit" '$FTP_HOST
   
   only:
     - master
