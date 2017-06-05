@@ -3,7 +3,6 @@ image: scardon/ruby-node-alpine:latest
 cache:
   key: "$CI_BUILD_REF_NAME"
   paths:
-    - vendor/
     - node_modules/
 
 
@@ -13,7 +12,7 @@ build:
     - apk add --update yarn git g++ musl-dev make
     - yarn install
     - bundle config --global disable_shared_gems true
-    - bundle install --path vendor
+    - bundle install 
   script:
     - bundle exec middleman build
   artifacts:
