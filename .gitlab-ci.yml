@@ -10,7 +10,7 @@ cache:
 build:
   stage: build
   before_script:
-    - apk add --update yarn
+    - apk add --update yarn git
     - bundle install --path vendor
     - yarn install
   script:
