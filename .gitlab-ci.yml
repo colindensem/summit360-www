@@ -11,8 +11,10 @@ build:
   stage: build
   before_script:
     - apk add --update yarn git
-    - bundle install --path vendor
     - yarn install
+
+    - apk --no-cache add --virtual .eventmachine-builddeps g++ musl-dev make && apk del .eventmachine-builddeps
+    - bundle install --path vendor
   script:
     - bundle exec middleman build
   artifacts:
