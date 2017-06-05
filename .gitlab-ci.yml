@@ -12,7 +12,7 @@ build:
   before_script:
     - apk add --update yarn git g++ musl-dev make
     - yarn install
-
+    - bundle config --global disable_shared_gems true
     - bundle install --path vendor
   script:
     - bundle exec middleman build
