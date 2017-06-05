@@ -1,4 +1,4 @@
-image: frolvlad/alpine-ruby:latest
+image: scardon/ruby-node-alpine:latest
 
 cache:
   key: "$CI_BUILD_REF_NAME"
