@@ -8,18 +8,32 @@ cache:
 
 
 build:
+  stage: build
+  before_script:
+    - bundle install --path vendor
+    - yarn install
+  script:
+    - bundle exec middleman build
+  artifacts:
+    paths:  
+      - public
+  only:
+    - master
+
+deploy_to_ftp:
   stage: deploy
   before_script:
     - apt-get update -yqqq
     - apt-get install -y lftp
     - mkdir -p ~/.lftp
     - echo 'set ssl:verify-certificate no' >> ~/.lftp/rc
-    - bundle install --path vendor
-    - yarn install
+
   script:
-    - bundle exec middleman build
-  
-    - lftp -c 'set ftp:ssl-force on ; set ftp:ssl-allow true ; set ftp:ssl-protect-data on ; set ssl:verify-certificate no; open -u '$FTP_USER','$FTP_PASSWORD' -e "mirror -c -e --reverse -v ./  ./public; quit" '$FTP_HOST
-  
+    # - lftp -c 'set ftp:ssl-force on ; set ftp:ssl-allow true ; set ftp:ssl-protect-data on ; set ssl:verify-certificate no; open -u '$FTP_USER','$FTP_PASSWORD' -e "mirror -c -e --reverse -v public/  /; quit" '$FTP_HOST
+    - lftp -e "set ftp:ssl-force; set ssl:verify-certificate no; mirror --reverse --dry-run public/ / ; quit" -u $FTP_USER,$FTP_PASSWORD $FTP_HOST --debug
+  artifacts:
+    paths:
+      - public
+
   only:
     - master
