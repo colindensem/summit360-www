@@ -30,7 +30,7 @@ deploy_to_ftp:
 
   script:
     # - lftp -c 'set ftp:ssl-force on ; set ftp:ssl-allow true ; set ftp:ssl-protect-data on ; set ssl:verify-certificate no; open -u '$FTP_USER','$FTP_PASSWORD' -e "mirror -c -e --reverse -v public/  /; quit" '$FTP_HOST
-    - lftp -e "set ftp:ssl-force; set ssl:verify-certificate no; mirror --reverse --dry-run public/ / ; quit" -u $FTP_USER,$FTP_PASSWORD $FTP_HOST --debug
+    - lftp -e "set sftp:auto-confirm yes; set ssl-allow true; set ftp:ssl-force true; set ftp:ssl-protect-data true; set ftp:ssl-protect-list true; set ssl:verify-certificate no; mirror --reverse --dry-run public/ /public ; quit" -u $FTP_USER,$FTP_PASSWORD $FTP_HOST --debug
   artifacts:
     paths:
       - public
