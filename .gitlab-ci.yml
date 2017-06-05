@@ -10,7 +10,7 @@ cache:
 build:
   stage: build
   before_script:
-    - apk add --update yarn git g++ musl-dev make ruby-json
+    - apk add --update yarn git g++ musl-dev make ruby-json xz-dev
     - yarn install
     - bundle config --global disable_shared_gems true
     - bundle install --path vendor
