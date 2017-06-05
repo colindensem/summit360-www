@@ -1,10 +1,9 @@
 GIT
-  remote: git://github.com/e2/rb-inotify.git
-  revision: be4cf88b4dab0bb3a899b16a0df8a6fcf1502e16
-  branch: misc_bugfixes
+  remote: https://github.com/guard/rb-inotify
+  revision: 7e3c714a09ae2b38d2620835e794150d8857cd49
   specs:
-    rb-inotify (0.9.7)
-      ffi (>= 0.5.0)
+    rb-inotify (0.9.9)
+      ffi (~> 1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -148,6 +147,8 @@ GEM
     tilt (2.0.6)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2017.2)
+      tzinfo (>= 1.0.0)
     uglifier (3.0.4)
       execjs (>= 0.3.0, < 3)
 
@@ -168,6 +169,7 @@ DEPENDENCIES
   middleman-sprockets (~> 4.0.0)
   nokogiri
   rb-inotify!
+  tzinfo
   tzinfo-data
   wdm (~> 0.1.0)
 
