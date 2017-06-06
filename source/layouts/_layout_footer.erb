@@ -1,36 +1,31 @@
-
-
 <footer>
-    <div class="overlayer">
+  <div class="overlayer">
     <div class="container">
-        <div class="row support">
-            <div class="col-sm-3">
-                <h4>Help and Support</h4>
-                <ul class="list-unstyled">
-
-                    <li><a href="/about/" class="white-text">About Us</a></li>
-                    <li><a href="/contact/" class="white-text">Contact Us</a></li>
-                    <li>
-                      <hr/>
-                    </li>
-                    <li> <a href="/terms" class="white-text">Terms &amp; Conditions</a></li>
-                    <li> <a href="/privacy" class="white-text">Privacy Policy</a></li>
-
-
-                </ul>
-            </div>
-            <div class="col-sm-3">
-                <h4>Clients</h4>
-                <ul class="list-unstyled">
-
-                  <% data.clients.list[0..4].each do |f| %>
-                    <li><%= f %></li>
-                 <% end %>
-                </ul>
-
-            </div>
-            <div class="col-sm-4">
-                <!-- <h4>Recent Entries</h4>
+      <div class="row support">
+        <div class="col-sm-3">
+          <h4>Help and Support</h4>
+          <ul class="list-unstyled">
+            <li>
+              <a class="white-text"
+                 href="/about/">About Us</a>
+            </li>
+            <li>
+              <a class="white-text"
+                 href="/contact/">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-3">
+          <h4>Clients</h4>
+          <ul class="list-unstyled">
+            <%data.clients.list[0..4].each do |f| %>
+            <li>
+              <%= f %>
+            </li><%end %>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <!-- <h4>Recent Entries</h4>
                 <ul class="list-unstyled">
                 <% blog.articles[0...5].each do |article| %>
                   <li>
@@ -38,27 +33,36 @@
                   </li>
                 <% end %>
                 </ul> -->
-            </div>
-            <div class="col-sm-2">
-
-            <h4 class="white-text">Connect</h4>
-            <ul class="list-unstyled">
-              <li><a class="white-text" href="https://www.github.com/colindensem"><i class="fa fa-github-square"></i> GitHub</a></li>
-              <li><a class="white-text" href="https://www.linkedin.com/in/colindensem"><i class="fa fa-linkedin-square"></i> LinkedIn</a></li>
-              <li><a class="white-text" href="https://www.twitter.com/colindensem"><i class="fa fa-twitter-square"></i> Twitter</a></li>
-              <li><a class="white-text" href="https://www.facebook.com/Summit360"><i class="fa fa-facebook-square"></i> Facebook</a></li>
-
-            </ul>
-
-
-            </div>
         </div>
+        <div class="col-sm-2">
+          <h4 class="white-text">Connect</h4>
+          <ul class="list-unstyled">
+            <li>
+              <a class="white-text"
+                 href="https://www.github.com/colindensem">
+              <i class="fa fa-github-square"></i> GitHub</a>
+            </li>
+            <li>
+              <a class="white-text"
+                 href="https://www.linkedin.com/in/colindensem">
+              <i class="fa fa-linkedin-square"></i> LinkedIn</a>
+            </li>
+            <li>
+              <a class="white-text"
+                 href="https://www.twitter.com/colindensem">
+              <i class="fa fa-twitter-square"></i> Twitter</a>
+            </li>
+            <li>
+              <a class="white-text"
+                 href="https://www.facebook.com/Summit360">
+              <i class="fa fa-facebook-square"></i> Facebook</a>
+            </li>
+          </ul>
         </div>
-        <div class="row">
-            <div class="credits">
-                &copy; 2017 Summit 360 Ltd., registered in England and Wales. Company Reg: 05710517
-            </div>
-        </div>
+      </div>
+      <div class="row">
+        <div class="credits">&copy; 2017 Summit 360 Ltd., registered in England and Wales. Company Reg: 05710517</div>
+      </div>
     </div>
-    </div>
+  </div>
 </footer>

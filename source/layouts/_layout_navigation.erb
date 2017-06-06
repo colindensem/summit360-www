@@ -12,7 +12,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/">
-        <img class="img-responsive2" src="/images/footer-logo.png" style="height:34px;"/>
+        <img class="img-responsive2" src="/assets/images/footer-logo.png" style="height:34px;"/>
         SUMMIT360</a>
     </div>
 
@@ -32,8 +32,10 @@
           <%= link_to 'Articles', '/posts/' %>
         </li> -->
 
-
-        <li><a href="/contact" class="">GET IN TOUCH</a></li>
+        <li class="<%=is_page_active('/contact/') %>">
+          <%= link_to 'GET IN TOUCH', '/contact/' %>
+        </li>
+        
       </ul>
 
     </div><!-- /.navbar-collapse -->

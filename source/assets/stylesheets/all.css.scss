@@ -1,0 +1,177 @@
+@charset 'utf-8';
+
+
+@import 'variables';
+
+// @import 'bootstrap-sass/assets/stylesheets/bootstrap';
+// @import 'material/bootstrap-material-design';
+
+@import 'featured_icons';
+
+// general styles
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.index {
+  height: 100%;
+  width: 100%;
+}
+
+// padded section
+.pad-section {
+  padding: 50px 0;
+}
+
+.pad-section-100 {
+  padding-top: 100px;
+}
+
+.text-top-100 {
+  display: table-cell;
+  padding-top: 100px;
+  text-align: center;
+}
+
+// vertical-centered text
+.text-vcenter {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.img-responsive2 {
+    display: inline-block !important;
+    max-width: 20%;
+    height: auto;
+}
+
+.white-text {
+  color: $app-color-white
+}
+
+.orange-text {
+    color: $app-color-orange !important;
+}
+
+.btn-standout {
+  background-color: $app-color-black;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+// additional sections
+.contact {
+  margin-top:60px;
+}
+
+
+.home {
+  background: url(/assets/images/bg-01.jpg) no-repeat center center fixed;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  h1 {
+    font-size: 4.5em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.services {
+  background-color: $app-color-blue;
+  color: $app-color-white;
+
+
+  .glyphicon {
+    border: 2px solid $app-color-white;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 60px;
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+    vertical-align: middle;
+    width: 140px;
+  }
+}
+
+.information {
+  background: url(/assets/images/bg-02.jpg) no-repeat center center fixed;
+  background-size: cover;
+  display: table;
+  height: 800px;
+  position: relative;
+  width: 100%;
+
+  .panel {
+    opacity: .85;
+  }
+}
+
+.google-map {
+  height: 500px;
+}
+
+footer {
+  background-color: $app-color-black;
+  color: $app-color-white;
+  padding: 20px 0;
+
+  a:hover {
+    color: $app-color-orange;
+  }
+
+  .glyphicon {
+    color: $app-color-black-lighter;
+    font-size: 60px;
+  }
+
+  .glyphicon:hover {
+    color: $app-color-blue;
+  }
+}
+
+.credits {
+  size: .8em;
+  text-align: center;
+}
+
+
+//Tagline Effects
+.tagline {
+  background-color: $app-color-white;
+
+  a {
+    background-color: transparent;
+    color: $app-color-link-blue;
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 44px;
+    text-align: center;
+    transition: all 300ms;
+  }
+}
+
+.top-socials {
+  margin: 0 12px;
+
+  li {
+    display: inline-block;
+    margin-right: 0;
+    padding: 0;
+    vertical-align: top;
+    width: 30px;
+  }
+}

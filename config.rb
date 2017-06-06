@@ -69,9 +69,9 @@ activate :blog do |blog|
   blog.per_page = 20
 end
 
-set :css_dir, 'stylesheets'
-set :js_dir, 'javascripts'
-set :images_dir, 'images'
+set :css_dir, 'assets/stylesheets'
+set :js_dir, 'assets/javascripts'
+set :images_dir, 'assets/images'
 
 #
 ## Middleman v4 Sprockets

@@ -42,3 +42,5 @@ gem 'rb-inotify', git: 'https://github.com/guard/rb-inotify'
 # Windows does not come with time zone data
 gem 'tzinfo'
 gem 'tzinfo-data'
+
+gem 'scss_lint', require: false

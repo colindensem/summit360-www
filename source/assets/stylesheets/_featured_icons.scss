@@ -3,43 +3,55 @@
 .feature-box a {
   color:#333333
 }
+
 .feature-box a:hover span.link{
   color:$app_theme_bg_color
 }
+
 .feature-box span.link{
   color:#333333
 }
+
 .feature-box .fa-circle{
   color:$app_theme_bg_color
 }
+
 .feature-box-animated:hover .fa-stack-1x{
   color: $app_theme_bg_color;
 }
+
 .feature-box{
   text-align:center;margin-bottom:15px
 }
+
 .feature-box a:hover{
   text-decoration:none
 }
+
 .feature-box .fa-stack{
   width:4em;height:4em;line-height:4em
 }
+
 .feature-box .fa-stack-2x{
   font-size:4em
 }
+
 .feature-box .fa-stack-1x{
   font-size:2em
 }
+
 .feature-box-animated .fa{
   -webkit-transition:color 0.3s;
   transition:color 0.3s
 }
+
 .feature-box-animated .fa-stack-2x{
   -webkit-transition:-webkit-transform 0.2s, opacity 0.2s;
   -moz-transition:-moz-transform 0.2s, opacity 0.2s;
   -o-transition:-o-transform 0.2s, opacity 0.2s;
   transition:transform 0.2s, opacity 0.2s
 }
+
 .feature-box-animated:hover .fa-stack-2x{
   -webkit-transform:scale(1.3);
   -ms-transform:scale(1.3);transform:scale(1.3);
