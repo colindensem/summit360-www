@@ -27,8 +27,8 @@ deploy_to_ftp:
   image: alpine:latest
   before_script:
     - apk add --update lftp
-    - mkdir -p ~/.lftp
-    - echo 'set ssl:verify-certificate no' >> ~/.lftp/rc
+    #- mkdir -p ~/.lftp
+    #- echo 'set ssl:verify-certificate no' >> ~/.lftp/rc
 
   script:
     # add --debug if problems
