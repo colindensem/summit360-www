@@ -24,15 +24,13 @@ build:
 
 deploy_to_ftp:
   stage: deploy
+  image: alpine:latest
   before_script:
-    # - apt-get update -yqqq
-    # - apt-get install -y lftp
     - apk add --update lftp
     - mkdir -p ~/.lftp
     - echo 'set ssl:verify-certificate no' >> ~/.lftp/rc
 
   script:
-    # - lftp -c 'set ftp:ssl-force on ; set ftp:ssl-allow true ; set ftp:ssl-protect-data on ; set ssl:verify-certificate no; open -u '$FTP_USER','$FTP_PASSWORD' -e "mirror -c -e --reverse -v public/  /; quit" '$FTP_HOST
     - lftp -e "set sftp:auto-confirm yes; set ssl-allow true; set ftp:ssl-force true; set ftp:ssl-protect-data true; set ftp:ssl-protect-list true; set ssl:verify-certificate no; mirror --reverse public/ /public ; quit" -u $FTP_USER,$FTP_PASSWORD $FTP_HOST --debug
   artifacts:
     paths:
