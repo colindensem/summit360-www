@@ -6,14 +6,17 @@ cache:
     - vendor/
     - node_modules/
 
+before_script:
+  - apk add --update yarn git g++ musl-dev make ruby-json xz-dev
+  - yarn install
+  - bundle config --global disable_shared_gems true
+  - bundle install --path vendor
 
-build:
-  stage: build
-  before_script:
-    - apk add --update yarn git g++ musl-dev make ruby-json xz-dev
-    - yarn install
-    - bundle config --global disable_shared_gems true
-    - bundle install --path vendor
+test:
+  script:
+    - bundle exec middleman build
+
+pages:
   script:
     - bundle exec middleman build
   artifacts:
@@ -22,20 +25,20 @@ build:
   only:
     - master
 
-deploy_to_ftp:
-  stage: deploy
-  image: alpine:latest
-  before_script:
-    - apk add --update lftp
-    #- mkdir -p ~/.lftp
-    #- echo 'set ssl:verify-certificate no' >> ~/.lftp/rc
-
-  script:
-    # add --debug if problems
-    - lftp -e "set sftp:auto-confirm yes; set ssl-allow true; set ftp:ssl-force true; set ftp:ssl-protect-data true; set ftp:ssl-protect-list true; set ssl:verify-certificate no; mirror --reverse public/ /public ; quit" -u $FTP_USER,$FTP_PASSWORD $FTP_HOST 
-  artifacts:
-    paths:
-      - public
-
-  only:
-    - master
+#deploy_to_ftp:
+#  stage: deploy
+#  image: alpine:latest
+#  before_script:
+#    - apk add --update lftp
+#    #- mkdir -p ~/.lftp
+#    #- echo 'set ssl:verify-certificate no' >> ~/.lftp/rc
+#
+#  script:
+#    # add --debug if problems
+#    - lftp -e "set sftp:auto-confirm yes; set ssl-allow true; set ftp:ssl-force true; set ftp:ssl-protect-data true; set ftp:ssl-protect-list true; set #ssl:verify-certificate no; mirror --reverse public/ /public ; quit" -u $FTP_USER,$FTP_PASSWORD $FTP_HOST 
+#  artifacts:
+#    paths:
+#      - public#
+#
+#  only:
+#    - master
