@@ -1,6 +1,6 @@
 #require_relative "./lib/build_cleaner"
 
-set :site_description, "Ruby & Elixir Development  : Sheffield UK"
+set :site_description, "Ruby & Elixir Development : Sheffield UK"
 
 # For custom domains on github pages
 page "CNAME", layout: false
@@ -23,7 +23,7 @@ page "/articles/*", :layout => "article"
 page "/articles/", layout: "page"
 page "/", layout: 'layout'
 
-set :url_root, "https://www.summit360.co.uk" 
+set :url_root, "https://www.summit360.co.uk"
 
 activate :search_engine_sitemap
 
@@ -80,15 +80,6 @@ activate :sprockets
 sprockets.append_path 'node_modules/bootstrap-sass/assets/fonts'
 sprockets.append_path 'node_modules/bootstrap-sass/assets/javascripts'
 sprockets.append_path 'node_modules'
-#
-## DEPLOY
-#
-activate :deploy do |deploy|
-  deploy.deploy_method = :git
-  deploy.remote = 'github'
-  deploy.branch = 'master'
-  deploy.build_before = true
-end
 
 # Build-specific configuration
 configure :build do

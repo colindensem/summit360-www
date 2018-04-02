@@ -2,66 +2,92 @@
   <div class="overlayer">
     <div class="container">
       <div class="row support">
-        <div class="col-sm-3">
+        <div class="col-sm-2">
           <h4>Help and Support</h4>
           <ul class="list-unstyled">
             <li>
-              <a class="white-text"
-                 href="/about/">About Us</a>
+              <a class="white-text" href="/about/">About Us</a>
             </li>
             <li>
-              <a class="white-text"
-                 href="/contact/">Contact Us</a>
+              <a class="white-text" href="/contact/">Contact Us</a>
             </li>
-          </ul>
-        </div>
-        <div class="col-sm-3">
-          <h4>Clients</h4>
-          <ul class="list-unstyled">
-            <%data.clients.list[0..4].each do |f| %>
-            <li>
-              <%= f %>
-            </li><%end %>
           </ul>
         </div>
         <div class="col-sm-4">
-          <!-- <h4>Recent Entries</h4>
-                <ul class="list-unstyled">
-                <% blog.articles[0...5].each do |article| %>
-                  <li>
-                    <a href="<%= article.url %>"><%= article.title %></a>
-                  </li>
-                <% end %>
-                </ul> -->
+          <h4>Clients</h4>
+
+          <%data.clients.list.each do |f| %>
+            <%=f%>
+            <% unless f == data.clients.list.last %>
+              ,&nbsp;
+            <% end %>
+          <%end %>
+
         </div>
-        <div class="col-sm-2">
+        <div class="col-sm-3">
+          <h4>Tech We Like</h4>
+          <div class="fa-2x">
+            <i class="fab fa-linode"></i>
+            <i class="fab fa-digital-ocean"></i>
+            <i class="fab fa-aws"></i>
+            <i class="fab fa-docker"></i>
+            <i class="fab fa-ember"></i>
+            <i class="fab fa-phoenix-framework"></i>
+            <i class="fab fa-js"></i>
+            <i class="fab fa-sass"></i>
+            <i class="fab fa-erlang"></i>
+            <i class="fab fa-gitlab"></i>
+            <i class="fab fa-github"></i>
+            <i class="fab fa-font-awesome"></i>
+            <i class="fab fa-firefox"></i>
+            <i class="fab fa-linux"></i>
+            <i class="fab fa-cc-paypal"></i>
+            <i class="fab fa-cc-stripe"></i>
+            <i class="fab fa-apple"></i>
+            <i class="fab fa-android"></i>
+
+
+          </div>
+
+        </div>
+        <div class="col-sm-3">
           <h4 class="white-text">Connect</h4>
           <ul class="list-unstyled">
             <li>
-              <a class="white-text"
-                 href="https://www.github.com/colindensem">
-              <i class="fa fa-github-square"></i> GitHub</a>
+              <a class="white-text" target="_new" href="https://www.github.com/summit360">
+                <span class="fa-2x">
+                  <i class="fab fa-github-square"></i>
+                </span> GitHub</a>
             </li>
             <li>
-              <a class="white-text"
-                 href="https://www.linkedin.com/in/colindensem">
-              <i class="fa fa-linkedin-square"></i> LinkedIn</a>
+              <a class="white-text" target="_new" href="https://www.gitlab.com/summit360">
+                <span class="fa-2x">
+                  <i class="fab fa-gitlab"></i>
+                </span> GitLab</a>
             </li>
             <li>
-              <a class="white-text"
-                 href="https://www.twitter.com/colindensem">
-              <i class="fa fa-twitter-square"></i> Twitter</a>
+              <a class="white-text" target="_new" href="https://www.linkedin.com/in/colindensem">
+                <span class="fa-2x">
+                  <i class="fab fa-linkedin"></i>
+                </span> LinkedIn</a>
             </li>
             <li>
-              <a class="white-text"
-                 href="https://www.facebook.com/Summit360">
-              <i class="fa fa-facebook-square"></i> Facebook</a>
+              <a class="white-text" target="_new" href="https://www.twitter.com/colindensem">
+                <span class="fa-2x">
+                  <i class="fab fa-twitter-square"></i>
+                </span> Twitter</a>
+            </li>
+            <li>
+              <a class="white-text" target="_new" href="https://www.facebook.com/Summit360">
+                <span class="fa-2x">
+                  <i class="fab fa-facebook"></i>
+                </span> Facebook</a>
             </li>
           </ul>
         </div>
       </div>
       <div class="row">
-        <div class="credits">&copy; 2017 Summit 360 Ltd., registered in England and Wales. Company Reg: 05710517</div>
+        <div class="credits">&copy; 2018 Summit 360 Ltd., registered in England and Wales. Company Reg: 05710517</div>
       </div>
     </div>
   </div>

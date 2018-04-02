@@ -91,21 +91,7 @@ html {
 .services {
   background-color: $app-color-blue;
   color: $app-color-white;
-
-
-  .glyphicon {
-    border: 2px solid $app-color-white;
-    border-radius: 50%;
-    display: inline-block;
-    font-size: 60px;
-    height: 140px;
-    line-height: 140px;
-    text-align: center;
-    vertical-align: middle;
-    width: 140px;
-  }
 }
-
 .information {
   background: url(/assets/images/bg-02.jpg) no-repeat center center fixed;
   background-size: cover;
@@ -130,15 +116,6 @@ footer {
 
   a:hover {
     color: $app-color-orange;
-  }
-
-  .glyphicon {
-    color: $app-color-black-lighter;
-    font-size: 60px;
-  }
-
-  .glyphicon:hover {
-    color: $app-color-blue;
   }
 }
 
