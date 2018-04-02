@@ -14,9 +14,12 @@ before_script:
 
 test:
   script:
-    - bundle exec middleman build
+    - bundle exec middleman build --build-dir=test
+  except:
+    - master
 
 pages:
+  stage: deploy
   script:
     - bundle exec middleman build
   artifacts:

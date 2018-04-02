@@ -38,7 +38,7 @@ gem 'middleman-minify-html'
 # For faster file watcher updates on Windows:
 gem 'wdm', '~> 0.1.0', platforms: %i[mswin mingw]
 
-gem 'rb-inotify', git: 'https://github.com/guard/rb-inotify'
+gem 'rb-inotify'#, git: 'https://github.com/guard/rb-inotify'
 # Windows does not come with time zone data
 gem 'tzinfo'
 gem 'tzinfo-data'
