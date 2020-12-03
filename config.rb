@@ -29,11 +29,11 @@ activate :search_engine_sitemap
 
 activate :meta_tags
 
-activate :google_analytics do |ga|
-  ga.tracking_id = 'UA-12318827-2' # Replace with your property ID.
-  # Tracking in development environment (default = true)
-  #ga.development = false
-end
+# activate :google_analytics do |ga|
+#   ga.tracking_id = 'UA-12318827-2' # Replace with your property ID.
+#   # Tracking in development environment (default = true)
+#   #ga.development = false
+# end
 
 ###
 # Helpers
